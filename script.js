@@ -2573,7 +2573,7 @@ window.toggleAnswer = function(id) {
     }
 };
 
-// साइडबार अध्याय स्विच इवेंट
+
 // साइडबार अध्याय क्लिक इवेंट
 document.querySelectorAll('.chapter-item').forEach(item => {
     item.addEventListener('click', function() {
@@ -2593,7 +2593,11 @@ document.querySelectorAll('.chapter-item').forEach(item => {
             // अध्याय 3 के लिए यह लाइन:
             loadQuestions(chapter3Questions);
             totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter3Questions.length}`;
-        } else {
+        } else if (chId === "4") {
+            loadQuestions(chapter4Questions);
+            totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter4Questions.length}`;
+        } 
+        else {
             questionsContainer.innerHTML = `<p style="padding: 20px; text-align: center; color: #888;">इस अध्याय के प्रश्न जल्द ही जोड़े जाएंगे।</p>`;
             totalQuestionsCount.textContent = `कुल प्रश्न: 0`;
         }
