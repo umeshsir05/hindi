@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सामान्य हिंदी वस्तुनिष्ठ प्रश्नावली</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- हेडर नेविगेशन -->
+    <header class="header">
+        <button class="menu-btn" id="menuToggle" aria-label="Menu">&#9776;</button>
+        <h1 class="header-title">सामान्य हिंदी प्रश्नावली</h1>
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle Theme">🌓</button>
+    </header>
+
+    <!-- हैमबर्गर साइडबार (15 अध्याय) -->
+    <div class="sidebar-overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>अध्याय सूची</h2>
+            <button class="close-btn" id="closeSidebar">&times;</button>
+        </div>
+        <ul class="chapter-list">
+            <li class="chapter-item active" data-chapter="1">अध्याय 1: हिंदी भाषा का इतिहास एवं मुख्य तथ्य</li>
+            <li class="chapter-item" data-chapter="2">अध्याय 2: वर्ण तथा उनका उच्चारण</li>
+            <li class="chapter-item" data-chapter="3">अध्याय 3: वर्तनी</li>
+            <li class="chapter-item" data-chapter="4">अध्याय 4: शब्द भेद</li>
+            <li class="chapter-item" data-chapter="5">अध्याय 5: संधि</li>
+            <li class="chapter-item" data-chapter="6">अध्याय 6: समास</li>
+            <li class="chapter-item" data-chapter="7">अध्याय 7: उपसर्ग प्रत्यय</li>
+            <li class="chapter-item" data-chapter="8">अध्याय 8: पर्यायवाची</li>
+            <li class="chapter-item" data-chapter="9">अध्याय 9: विलोम शब्द</li>
+            <li class="chapter-item" data-chapter="10">अध्याय 10: अनेकार्थी शब्द</li>
+            <li class="chapter-item" data-chapter="11">अध्याय 11: समोच्चरित भिन्नार्थक शब्द</li>
+            <li class="chapter-item" data-chapter="12">अध्याय 12: वाक्यांश के लिए एक शब्द</li>
+            <li class="chapter-item" data-chapter="13">अध्याय 13: हिंदी व्याकरण</li>
+            <li class="chapter-item" data-chapter="14">अध्याय 14: विराम चिन्ह</li>
+            <li class="chapter-item" data-chapter="15">अध्याय 15: वाक्य वर्गीकरण और वाक्यंतरण</li>
+        </ul>
+    </aside>
+
+    <!-- मुख्य कंटेनर -->
+    <main class="container">
+        <div class="chapter-banner">
+            <h2 id="currentChapterTitle">अध्याय 1: हिंदी भाषा का इतिहास एवं मुख्य तथ्य</h2>
+            <p id="totalQuestionsCount">कुल प्रश्न: 80</p>
+        </div>
+
+        <section id="questionsContainer" class="questions-list">
+            <!-- प्रश्न जावास्क्रिप्ट द्वारा यहाँ रेंडर होंगे -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
