@@ -3176,6 +3176,11 @@ document.querySelectorAll('.chapter-item').forEach(item => {
             loadQuestions(chapter4Questions);
             totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter4Questions.length}`;
         } 
+        else if (chId === "5") {
+            loadQuestions(chapter5Questions);
+            totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter5Questions.length}`;
+        }
+
         else {
             questionsContainer.innerHTML = `<p style="padding: 20px; text-align: center; color: #888;">इस अध्याय के प्रश्न जल्द ही जोड़े जाएंगे।</p>`;
             totalQuestionsCount.textContent = `कुल प्रश्न: 0`;
