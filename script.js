@@ -6997,7 +6997,6 @@ document.querySelectorAll('.chapter-item').forEach(item => {
             loadQuestions(chapter9Questions);
             totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter9Questions.length}`;
                }
-
         else if (chId === "10") {
             loadQuestions(chapter10Questions);
             totalQuestionsCount.textContent = `कुल प्रश्न: ${chapter10Questions.length}`;
