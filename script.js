@@ -9165,3 +9165,72 @@ document.querySelectorAll('.chapter-item').forEach(item => {
 window.onload = () => {
     loadQuestions(chapter1Questions);
 };
+
+// Guessing Paper Generate karne ka function
+function generateGuessingPaper() {
+    // 1. Sabhi 15 Adhyayo ke questions ko ek array me combine karna
+    const allChapters = [
+        chapter1Questions,
+        chapter2Questions,
+        chapter3Questions,
+        chapter4Questions,
+        chapter5Questions,
+        chapter6Questions,
+        chapter7Questions,
+        chapter8Questions,
+        chapter9Questions,
+        chapter10Questions,
+        chapter11Questions,
+        chapter12Questions,
+        chapter13Questions,
+        chapter14Questions,
+        chapter15Questions
+    ];
+
+    // Sabhi available questions ko merge karna
+    let masterPool = [];
+    allChapters.forEach((chapter) => {
+        if (Array.isArray(chapter) && chapter.length > 0) {
+            masterPool = masterPool.concat(chapter);
+        }
+    });
+
+    if (masterPool.length === 0) {
+        alert("Abhi questions uplabdh nahi hain!");
+        return;
+    }
+
+    // 2. Questions ko randomly shuffle karna (Fisher-Yates Shuffle)
+    const shuffledPool = [...masterPool];
+    for (let i = shuffledPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledPool[i], shuffledPool[j]] = [shuffledPool[j], shuffledPool[i]];
+    }
+
+    // 3. Pehle 50 random questions select karna aur ID set karna
+    const selectedQuestions = shuffledPool.slice(0, 50).map((q, index) => {
+        return {
+            ...q,
+            id: index + 1 // Test paper me 1 se 50 tak serial number
+        };
+    });
+
+    // 4. Sidebar me active class hatana
+    document.querySelectorAll('.chapter-item').forEach(item => item.classList.remove('active'));
+
+    // 5. Header aur counter update karna
+    currentChapterTitle.textContent = "🎯 सामान्य हिंदी: 50 महत्वपूर्ण Guessing MCQs Paper";
+    totalQuestionsCount.textContent = `कुल प्रश्न: ${selectedQuestions.length} (Randomly Filtered)`;
+
+    // 6. Paper render karna
+    loadQuestions(selectedQuestions);
+
+    // Page ke top par scroll karna
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Button Click Event Listener
+const guessBtn = document.getElementById('generateGuessingPaperBtn');
+if (guessBtn) {
+    guessBtn.addEventListener('click', generateGuessingPaper);
+}
